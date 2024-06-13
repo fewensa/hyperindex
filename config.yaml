@@ -1,0 +1,86 @@
+name: My Envio Indexer
+contracts:
+  - name: ORMP
+    handler: src/EventHandlers.ts
+    events:
+      - event: HashImported(address indexed oracle, uint256 chainId, address channel, uint256 msgIndex, bytes32 hash)
+      - event: MessageAccepted(bytes32 indexed msgHash, (address,uint256,uint256,address,uint256,address,uint256,bytes) message)
+      - event: MessageAssigned(bytes32 indexed msgHash, address indexed oracle, address indexed relayer, uint256 oracleFee, uint256 relayerFee, bytes params)
+      - event: MessageDispatched(bytes32 indexed msgHash, bool dispatchResult)
+networks:
+  - id: 1
+    start_block: 20009605
+    end_block: null
+    contracts:
+      - name: ORMP
+        address:
+          - 0x13b2211a7cA45Db2808F6dB05557ce5347e3634e
+  - id: 44
+    start_block: 2900604
+    end_block: null
+    contracts:
+      - name: ORMP
+        address:
+          - 0x13b2211a7cA45Db2808F6dB05557ce5347e3634e
+  - id: 46
+    start_block: 2830100
+    end_block: null
+    contracts:
+      - name: ORMP
+        address:
+          - 0x13b2211a7cA45Db2808F6dB05557ce5347e3634e
+      - name: Signaturepub
+        address:
+          - 0x57Aa601A0377f5AB313C5A955ee874f5D495fC92
+        handler: src/EventHandlers.ts
+        events:
+          - event: SignatureSubmittion(uint256 indexed chainId, address indexed channel, address indexed signer, uint256 msgIndex, bytes signature, bytes data)
+  - id: 137
+    start_block: 57710686
+    end_block: null
+    contracts:
+      - name: ORMP
+        address:
+          - 0x13b2211a7cA45Db2808F6dB05557ce5347e3634e
+  - id: 1284
+    start_block: 6294138
+    end_block: null
+    contracts:
+      - name: ORMP
+        address:
+          - 0x13b2211a7cA45Db2808F6dB05557ce5347e3634e
+  - id: 2222
+    rpc_config:
+      url: https://kava-evm-rpc.publicnode.com
+    start_block: 10242122
+    end_block: null
+    contracts:
+      - name: USDT
+        address:
+          - 0x919C1c267BC06a7039e03fcc2eF738525769109c
+        handler: src/EventHandlers.ts
+        events:
+          - event: Approval(address indexed owner, address indexed spender, uint256 value)
+          - event: BlockPlaced(address indexed _user)
+          - event: BlockReleased(address indexed _user)
+          - event: DestroyedBlockedFunds(address indexed _blockedUser, uint256 _balance)
+          - event: Mint(address indexed _destination, uint256 _amount)
+          - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+          - event: Redeem(uint256 _amount)
+          - event: Transfer(address indexed from, address indexed to, uint256 value)
+  - id: 42161
+    start_block: 217891600
+    end_block: null
+    contracts:
+      - name: ORMP
+        address:
+          - 0x13b2211a7cA45Db2808F6dB05557ce5347e3634e
+  - id: 728126428
+    rpc_config:
+      url: https://api.trongrid.io/jsonrpc
+    start_block: 62251337
+    end_block: null
+    contracts:
+      - name: ORMP
+        address:
+          - 0x5C5c383FEbE62F377F8c0eA1de97F2a2Ba102e98
